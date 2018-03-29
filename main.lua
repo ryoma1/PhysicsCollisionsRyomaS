@@ -91,8 +91,34 @@ local function secondBall()
 end
 
 -----------------------------------------------------------------------------------
+local function thirdBall()
+   --creating first ball
+   local ball3 = display.newImage("Physics/super_ball.png", 0, 0)
+
+   --adding to physics
+   physics.addBody(ball3, {density=2.0, friction=0.9, bounce=0.3, radius= 50})
+
+   -- changing the sice of the  BALLLLSSS
+   ball3:scale(2,2)
+
+end
+-----------------------------------------------------------------------------------
+local function fourthBall()
+   --creating first ball
+   local ball4 = display.newImage("Physics/super_ball.png", 0, 0)
+
+   --adding to physics
+   physics.addBody(ball4, {density=3.0, friction=0.9, bounce=0.3, radius= 100})
+
+   -- changing the sice of the  BALLLLSSS
+   ball4:scale(4,4)
+
+end
+-----------------------------------------------------------------------------------
 --TIMER DELAYS - call each function after the given millisecond
 -----------------------------------------------------------------------------------
 
 timer.performWithDelay( 0, firstBall)
 timer.performWithDelay( 500, secondBall)
+timer.performWithDelay( 1000, thirdBall)
+timer.performWithDelay( 1000, fourthBall)
