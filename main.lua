@@ -64,6 +64,41 @@ local bkg = display.newImage("physics/bkg.png", 0, 0)
  --send to back
  bkg:toBack()
 
+ ---------------------------------------------------------
+--create a veritcal wall
+local wall = display.newImage("Images/beam.png", 0, 0)
+
+ --set the x and y position
+ wall.x = display.contentCenterX *2
+ wall.y = display.contentCenterY*1.75
+
+ --set the wall size
+ wall.width = display.contentWidth*2
+ wall.height = display.contentHeight/10
+
+ --rotate the beam -60 degrees so its on an angle
+ wall:rotate(90)
+
+ --send it to the back layer
+ 
+ --add to physics
+ physics.addBody(wall, "static", {friction=0.5, bounce=0.3})
+---------------------------------------------------------------
+--create bkg
+local bkg = display.newImage("physics/bkg.png", 0, 0)
+
+ --set the x and y position
+ bkg.x = display.contentCenterX
+ bkg.y = display.contentCenterY
+
+ --set the bkg size
+ bkg.width = display.contentWidth
+ bkg.height = display.contentHeight
+
+ --send to back
+ bkg:toBack()
+
+
  ----------------------------------------------------------
  --FUCNTIONS
  ----------------------------------------------------------
